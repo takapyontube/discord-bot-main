@@ -4,7 +4,6 @@ import Client
 import pathlib
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
-#test
 
 def get_prompt(path: str) -> str:
     path = pathlib.Path(path)
