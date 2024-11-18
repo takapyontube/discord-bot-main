@@ -1,10 +1,10 @@
 from typing import Any, Dict, List, Optional, Iterator
-from langchain_core.callbacks import CallbackManagerForLLMRun
-from langchain_core.callbacks.manager import CallbackManagerForLLMRun
-from langchain_core.language_models import BaseChatModel
-from langchain_core.language_models.llms import LLM
-from langchain_core.messages import AIMessage, BaseMessage, AIMessageChunk
-from langchain_core.outputs import (
+from langchain_core.callbacks import CallbackManagerForLLMRun #type:ignore
+from langchain_core.callbacks.manager import CallbackManagerForLLMRun #type:ignore
+from langchain_core.language_models import BaseChatModel #type:ignore
+from langchain_core.language_models.llms import LLM #type:ignore
+from langchain_core.messages import AIMessage, BaseMessage, AIMessageChunk #type:ignore
+from langchain_core.outputs import ( #type:ignore
     ChatGeneration, 
     ChatGenerationChunk, 
     ChatResult, 
@@ -182,7 +182,7 @@ if __name__ == '__main__':
     # test code
     
     import os
-    from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
+    from langchain_core.messages import HumanMessage, SystemMessage, AIMessage #type:ignore
 
     lang_model = LangModel.LangModel(
         api_key=os.getenv('OLLAMA_API_KEY'),

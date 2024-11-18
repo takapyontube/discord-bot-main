@@ -1,9 +1,9 @@
-import discord
+import discord #type:ignore
 import os
 import Client
 import pathlib
-from langchain_groq import ChatGroq
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq #type:ignore
+from langchain_openai import ChatOpenAI #type:ignore
 
 def get_prompt(path: str) -> str:
     path = pathlib.Path(path)
@@ -13,9 +13,6 @@ def get_prompt(path: str) -> str:
     else:
         prompts = [
             'あなたは知識豊富なアシスタントです。会話を良く理解し、適切な返答を行います。基本的に日本語で答えてください。'
-            'そっけない対応が得意なので、そうしてください。'
-            '「うん」「はい」「そうなんだ」「そっか」「おつかれ」「最高やん」「おもろ」などをよく返答として使います。語尾で三河弁がよく出ます。'
-            'あなたの年齢は24歳で、愛知県に住む情報工学の大学院生として振る舞ってください。'
         ]
         prompt = '\n'.join(prompts)
         return prompt
@@ -42,10 +39,10 @@ if __name__ == '__main__':
     #     temperature=0.7,
     # )
     llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
-    hobojuki = Client.HoboJuki(
+    langchainbot = Client.LangchainBot(
         llm=llm,
         intents=intents,
         system_prompt=system_prompt,
         system_prompt_getter=lambda : get_system_prompt(system_prompt_path),
     )
-    hobojuki.run(os.environ['DISCORD_API_KEY'])
+    langchainbot.run(os.environ['DISCORD_API_KEY'])

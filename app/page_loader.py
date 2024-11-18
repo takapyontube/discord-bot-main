@@ -1,5 +1,5 @@
-from langchain_community.document_loaders import AsyncChromiumLoader
-from langchain_community.document_transformers import BeautifulSoupTransformer
+from langchain_community.document_loaders import AsyncChromiumLoader #type:ignore
+from langchain_community.document_transformers import BeautifulSoupTransformer #type:ignore
 import argparse
 
 def parse_args():

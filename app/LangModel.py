@@ -1,5 +1,5 @@
 import os
-import requests
+import requests #type:ignore
 import json
 from collections.abc import Generator
 

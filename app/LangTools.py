@@ -1,14 +1,14 @@
 import re
 import pathlib
-from langchain_core.language_models import BaseChatModel
-from langchain_core.messages import SystemMessage
-from langchain_community.document_loaders import AsyncChromiumLoader
-from langchain_community.document_transformers import BeautifulSoupTransformer
+from langchain_core.language_models import BaseChatModel #type:ignore
+from langchain_core.messages import SystemMessage #type:ignore
+from langchain_community.document_loaders import AsyncChromiumLoader #type:ignore
+from langchain_community.document_transformers import BeautifulSoupTransformer #type:ignore
 from LangModel import LangModel as LM
 import OllamaLangModel
 import urllib.parse
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_core.prompts import PromptTemplate
+from langchain.text_splitter import RecursiveCharacterTextSplitter #type:ignore
+from langchain_core.prompts import PromptTemplate #type:ignore
 import subprocess
 import warnings
 

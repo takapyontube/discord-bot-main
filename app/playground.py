@@ -1,7 +1,7 @@
 import LangModel
 import os
 import json
-from langchain_community.tools import BraveSearch
+from langchain_community.tools import BraveSearch #type:ignore
 
 llm = LangModel.LangModel(
     os.getenv('OLLAMA_API_KEY'), 
@@ -10,8 +10,8 @@ llm = LangModel.LangModel(
 )
 
 def groq_test():
-    from langchain_groq import ChatGroq
-    from langchain_core.messages import AIMessage, SystemMessage, HumanMessage
+    from langchain_groq import ChatGroq #type:ignore
+    from langchain_core.messages import AIMessage, SystemMessage, HumanMessage #type:ignore
     llm = ChatGroq(
         model="mixtral-8x7b-32768",
         temperature=0.7,
@@ -59,8 +59,8 @@ def test_beautifulsoup():
     '''
     langchainのBeautifulSoup向けコンポーネントを使ってスクレイピングする関数
     '''
-    from langchain_community.document_loaders import AsyncChromiumLoader
-    from langchain_community.document_transformers import BeautifulSoupTransformer
+    from langchain_community.document_loaders import AsyncChromiumLoader #type:ignore
+    from langchain_community.document_transformers import BeautifulSoupTransformer #type:ignore
     print('test_beautifulsoup')
     def scrape():
         urls = [
@@ -129,8 +129,8 @@ def agent_test():
     '''
     print('agent_test')
     import OllamaLangModel
-    from langchain_community.tools import WikipediaQueryRun
-    from langchain_community.utilities import WikipediaAPIWrapper
+    from langchain_community.tools import WikipediaQueryRun #type:ignore
+    from langchain_community.utilities import WikipediaAPIWrapper #type:ignore
     
     wiki = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper(top_k_results=2, doc_content_chars_max=1000))
     # wiki tool test
